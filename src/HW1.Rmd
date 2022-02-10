@@ -1,0 +1,59 @@
+---
+title: "HW1"
+author: "Zik"
+date: "2/10/2022"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Report: 
+## This dataset contains information of subscribers who either subscribed or nor subscribed to a magazine. We are tasked to predict which segment of the customers are more likely to subscribe.
+
+
+#table content
+```{r}
+data <- read.csv("subscribed_data.csv")
+df <- data.frame(data)
+```
+
+```{r}
+str(df)
+```
+
+
+The three variables included in the dataset are:
+1.Gender of the user 1 being female and 0 being male.
+2.Age of the user. This variable takes on numerics value
+3.A binary variabel indicating whether the user subscribed to the magazine or not
+
+
+## Including Plots
+```{r}
+library(ggplot2)
+ggplot(data = df, aes(x=Age, y=Subscribe)) + 
+  geom_bar(stat = "identity") + ggtitle("Number of Subcription by Age")
+```
+
+```{r}
+ggplot(data = df, aes(x=Gender, y=Subscribe)) + 
+  geom_bar(stat = "identity") + ggtitle("Number of Subcription by Gender")
+```
+
+Conclusion:
+1. As age increases, the subscription rate decreases among subscribers. People from the age 20-32 accounts for the majority of the subscriptions.
+2. Female users are more likely to subscribe to the magazine than male users.
+
+
+
+
+
+
+Credits and Reference Link: "https://github.com/bonheurgirl/Machine-Learning-R/blob/master/2.Predict%20Magazine%20Subscription%20Behavior%20-%20Logistic%20Regression.R"
+
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

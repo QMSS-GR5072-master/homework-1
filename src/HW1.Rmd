@@ -1,10 +1,19 @@
 ---
 title: "HW1"
+subtitle: |
+  | GR5072 - Modern Data Structures
+  | Spring 2022 
 author: "Zik"
 date: "2/10/2022"
 output:
-  pdf_document: default
-  html_document: default
+  md_document:
+    variant: markdown_github
+  pdf_document: 
+    toc: yes
+  html_document:
+    theme: journal
+    toc: yes
+    number_sections: yes
 ---
 
 ```{r setup, include=FALSE}
@@ -17,7 +26,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 #table content
 ```{r}
-data <- read.csv("subscribed_data.csv")
+data <- read.csv("/Users/zikangchen97/Desktop/Columbia/5072 QMSS/HW1/homework-1/src/hw_file/subscribed_data.csv")
 df <- data.frame(data)
 ```
 
